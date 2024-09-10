@@ -75,29 +75,29 @@
             var diem1 = parseFloat( document.getElementById('diem1').value) ;
             var diem2 = parseFloat(document.getElementById('diem2').value) ;
             var namhoc = parseInt(document.getElementById('namhoc').value);
-            var tong ;
+            var tb ;
 
             switch(namhoc){
                 case 1:
-                    tong = (diem1 + diem2 * 2) / 3;
+                    tb = (diem1 + diem2 * 2) / 3;
                     break;
                 case 2:
-                    tong = (diem1 * 2 + diem2 * 2) / 4;
+                    tb = (diem1 * 2 + diem2 * 2) / 4;
                     break;
                 case 3:
-                    tong = (diem1 * 2 + diem2 * 3) / 5;
+                    tb = (diem1 * 2 + diem2 * 3) / 5;
                     break;
             }
-            
-            document.getElementById('tong').value = tong.toFixed(2);
 
-            if (tong >= 9) {
+            document.getElementById('tb').value = tb.toFixed(2);
+
+            if (tb >= 9) {
                 document.getElementById('kq').innerHTML = "Học sinh giỏi";
                 document.getElementById('kq').style.color = "red";
-            } else if (tong >= 7 && tong < 9) {
+            } else if (tb >= 7 && tb < 9) {
                 document.getElementById('kq').innerHTML = "Học sinh khá";
                 document.getElementById('kq').style.color = "blue";
-            } else if (tong >= 5 && tong < 7) {
+            } else if (tb >= 5 && tb < 7) {
                 document.getElementById('kq').innerHTML = "Học sinh Trung bình";
                 document.getElementById('kq').style.color = "yellow";
             } else {
@@ -109,7 +109,7 @@
         function myFunction2(){
             document.getElementById('diem1').value = "";
             document.getElementById('diem2').value = "";
-            document.getElementById('tong').value = "";
+            document.getElementById('tb').value = "";
             document.getElementById('kq').innerHTML = "";
         }
     </script>
