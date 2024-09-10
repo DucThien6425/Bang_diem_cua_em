@@ -26,6 +26,7 @@
         }
 
         #button{
+            padding: 15px;
             padding-left: 120px;
         }
         #kq{
@@ -65,8 +66,8 @@
         </div >
         <p id="kq"></p>
         <div id= "button">
-        <button type="button" id="ok" name="ok" value="OK" onclick="myFunction1()">OK</button>
-        <button type="button" id="cancel" name="cancel" value="cancel" onclick="myFunction2()">Cancel</button>
+            <button type="button" id="ok" name="ok" value="OK" onclick="myFunction1()">OK</button>
+            <button type="button" id="cancel" name="cancel" value="cancel" onclick="myFunction2()">Cancel</button>
         </div>
     </div>
     <script type="text/javascript">
@@ -78,16 +79,16 @@
 
             switch(namhoc){
                 case 1:
-                    tong = (diem1 + diem2) / 2;
+                    tong = (diem1 + diem2 * 2) / 3;
                     break;
                 case 2:
-                    tong = (diem1 + (diem2 *2))/3;
+                    tong = (diem1 * 2 + diem2 * 2) / 4;
                     break;
                 case 3:
-                    tong = (diem1 + (diem2 *3))/4;
+                    tong = (diem1 * 2 + diem2 * 3) / 5;
+                    break;
             }
-
-
+            
             document.getElementById('tong').value = tong.toFixed(2);
 
             if (tong >= 9) {
