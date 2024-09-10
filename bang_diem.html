@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinh diem</title>
+    <style>
+        #container{
+            border: 1px solid black;
+            width: 350px;
+            background-color: rgb(179, 157, 157);
+            margin: 100px;
+        }
+        h1{
+            padding-left: 50px;
+
+        }
+        #content{
+            padding-left: 40px;
+        }
+        table{
+            padding-top: 10px;
+        }
+        select{
+            margin-left: 41px ;
+        }
+
+        #button{
+            padding-left: 120px;
+        }
+        #kq{
+            margin-left: 40px ;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Bang diem cua em</h1>
+        <div id="content">
+            <table>
+                <tr>
+                    Semester1 : <input type="number" id="diem1" >
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    Semester2 : <input type="number" id="diem2">
+                </tr>
+            </table>
+            <table>
+                <tr>
+                Year: <select name="" id="namhoc">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                </select>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    Summarise: <input type="number" id="tong" placeholder="ket qua">
+                </tr>
+            </table>
+        </div >
+        <p id="kq"></p>
+        <div id= "button">
+        <button type="button" id="ok" name="ok" value="OK" onclick="myFunction1()">OK</button>
+        <button type="button" id="cancel" name="cancel" value="cancel" onclick="myFunction2()">Cancel</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function myFunction1(){
+            var diem1 = parseFloat( document.getElementById('diem1').value) ;
+            var diem2 = parseFloat(document.getElementById('diem2').value) ;
+            var namhoc = parseInt(document.getElementById('namhoc').value);
+            var tong ;
+
+            switch(namhoc){
+                case 1:
+                    tong = (diem1 + diem2) / 2;
+                    break;
+                case 2:
+                    tong = (diem1 + (diem2 *2))/3;
+                    break;
+                case 3:
+                    tong = (diem1 + (diem2 *3))/4;
+            }
+
+
+            document.getElementById('tong').value = tong.toFixed(2);
+
+            if (tong >= 9) {
+                document.getElementById('kq').innerHTML = "Học sinh giỏi";
+                document.getElementById('kq').style.color = "red";
+            } else if (tong >= 7 && tong < 9) {
+                document.getElementById('kq').innerHTML = "Học sinh khá";
+                document.getElementById('kq').style.color = "blue";
+            } else if (tong >= 5 && tong < 7) {
+                document.getElementById('kq').innerHTML = "Học sinh Trung bình";
+                document.getElementById('kq').style.color = "yellow";
+            } else {
+                document.getElementById('kq').innerHTML = "Học sinh yếu";
+                document.getElementById('kq').style.color = "black";
+            }
+        }
+
+        function myFunction2(){
+            document.getElementById('diem1').value = "";
+            document.getElementById('diem2').value = "";
+            document.getElementById('tong').value = "";
+            document.getElementById('kq').innerHTML = "";
+        }
+    </script>
+</body>
+</html>
